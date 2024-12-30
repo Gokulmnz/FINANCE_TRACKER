@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finance Tracker</title>
+</head>
+<body>
+    <h1>Finance Tracker</h1>
+    <h2>Net Worth: {{ net_worth }}</h2>
+    <h3>Assets</h3>
+    <ul>
+        {% for asset in assets %}
+            <li>{{ asset.name }} - {{ asset.value }}</li>
+        {% endfor %}
+    </ul>
+    <h3>Liabilities</h3>
+    <ul>
+        {% for liability in liabilities %}
+            <li>{{ liability.name }} - {{ liability.value }}</li>
+        {% endfor %}
+    </ul>
+    <form action="{{ url_for('add') }}" method="post">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="value" placeholder="Value">
+        <select name="type">
+            <option value="Asset">Asset</option>
+            <option value="Liability">Liability</option>
+        </select>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
