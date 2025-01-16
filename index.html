@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+      <marquee behavior="" direction=""><h1>Finance Tracker</h1></marquee>
+    </header>
+    <main>
+        <section id="add-transaction">
+            <h2>Add Transaction</h2>
+            <form id="transaction-form">
+                <label for="transaction-name">Transaction Name:</label>
+                <input type="text" id="transaction-name" name="transaction-name" required>
+                
+                <label for="transaction-amount">Amount:</label>
+                <input type="number" id="transaction-amount" name="transaction-amount" required>
+                
+                <label for="transaction-type">Type:</label>
+                <select id="transaction-type" name="transaction-type" required>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+                
+                <button type="submit">Add Transaction</button>
+            </form>
+        </section>
+        <section id="transaction-list">
+            <h2>Transaction List</h2>
+            <ul id="transactions">
+                <!-- Transactions will be listed here -->
+            </ul>
+        </section>
+        <section id="summary">
+            <h2>Summary</h2>
+            <p>Total Income: <span id="total-income">$0.00</span></p>
+            <p>Total Expense: <span id="total-expense">$0.00</span></p>
+            <p>Balance: <span id="balance">$0.00</span></p>
+        </section>
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>
+
+<section id="summary-table">
+    <h2>Summary Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Type</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Total Income</td>
+                <td id="table-total-income">$0.00</td>
+            </tr>
+            <tr>
+                <td>Total Expense</td>
+                <td id="table-total-expense">$0.00</td>
+            </tr>
+            <tr>
+                <td>Balance</td>
+                <td id="table-balance">$0.00</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+<!-- Add a section for database connection status -->
+<section id="database-status">
+    <h2>Database Connection Status</h2>
+    <p id="db-status">Not connected</p>
+</section></section>
